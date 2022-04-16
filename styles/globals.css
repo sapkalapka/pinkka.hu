@@ -10,21 +10,17 @@
   #__next {
     @apply flex flex-col h-full;
   }
-  main {
-    @apply grow px-6 lg:px-0 xl:w-4/6 mx-auto py-12;
-  }
+
   label {
     @apply text-lg block;
   }
 
-  input[type='text'],
+  input[type="text"],
   select,
   textarea {
     @apply border rounded shadow-sm ring-1 ring-background;
   }
-  .order-btn {
-    @apply shadow rounded block m-auto py-3 px-6 bg-white text-black font-bold font-accent-2 text-3xl hover:text-white hover:bg-background ring-2 ring-background active:scale-105 active:rounded transition-all;
-  }
+
   .portfolio__element:nth-child(even) .portfolio__text {
     @apply lg:order-2;
   }
