@@ -3,28 +3,7 @@
 @tailwind utilities;
 
 @layer base {
-  body,
-  html {
-    @apply h-full w-full select-none font-main;
-  }
   #__next {
-    @apply flex flex-col h-full;
-  }
-
-  label {
-    @apply text-lg block;
-  }
-
-  input[type="text"],
-  select,
-  textarea {
-    @apply border rounded shadow-sm ring-1 ring-background;
-  }
-
-  .portfolio__element:nth-child(even) .portfolio__text {
-    @apply lg:order-2;
-  }
-  .portfolio__element:nth-child(even) .portfolio__text * {
-    @apply lg:text-left;
+    @apply flex flex-col font-main;
   }
 }

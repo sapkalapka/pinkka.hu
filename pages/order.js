@@ -19,18 +19,22 @@ const Order = () => {
       <PageTitle title={"Megrendelés leadása"} />
       {stage.one && (
         <div className="q1">
-          <p className="font-bold">1. Milyen típusú terméket szeretnél rendelni?*</p>
+          <p className="font-bold">
+            1. Milyen típusú terméket szeretnél rendelni?*
+          </p>
           <label htmlFor="opt1">
             <input type="radio" name="q1" id="opt1" /> Táska vagy hátizsák
           </label>
           <label htmlFor="opt2">
-            <input type="radio" name="q1" id="opt2" /> E-book tartó vagy könyvtok
+            <input type="radio" name="q1" id="opt2" /> E-book tartó vagy
+            könyvtok
           </label>
           <label htmlFor="opt3">
             <input type="radio" name="q1" id="opt3" /> Kozmetikai neszesszer
           </label>
           <label htmlFor="opt4">
-            <input type="radio" name="q1" id="opt4" /> Egyéb (egyedi megrendelés)
+            <input type="radio" name="q1" id="opt4" /> Egyéb (egyedi
+            megrendelés)
           </label>
         </div>
       )}
@@ -58,7 +62,7 @@ const Order = () => {
 
       <button
         disabled={!readyToSend}
-        className="text-4xl bg-background max-w-fit mx-auto py-3 px-6 rounded-xl shadow text-white font-accent-2"
+        className="text-4xl max-w-fit mx-auto py-3 px-6 rounded-xl shadow text-white font-accent-2"
       >
         Rendelés elküldése
       </button>

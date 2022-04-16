@@ -1,26 +1,45 @@
 import { useState } from "react"
 import Image from "next/image"
 import Link from "next/link"
-import Head from "next/head"
+import { useRouter } from "next/router"
 
 const Header = () => {
+  const router = useRouter()
+
   return (
-    <header>
-      <div id="logo" className="flex justify-center">
+    <header className="bg-[url('/bg.jpg')] bg-contain">
+      <nav className="flex gap-4 px-4 py-2 justify-center items-center text-center font-accent-2">
         <Link href="/">
-          <a className="text-7xl font-bold font-accent-1 hover:grayscale transition-all">PinKKa</a>
-          {/* <Image src={'/logo.png'} objectFit='contain' layout='fill' /> */}
+          <a className="rounded shadow-xl bg-white px-4 text-7xl font-bold font-accent-1 transition-all">
+            PinKKa
+          </a>
         </Link>
-      </div>
-      <nav className="grid grid-cols-3 content-center text-center py-2 bg-background text-white font-accent-2 shadow">
         <Link href="/">
-          <a className="text-5xl font-bold transition-all uppercase hover:text-black">Rólam</a>
+          <a
+            className={`${
+              router.pathname === "/" ? "text-black" : "text-main"
+            } ml-auto bg-white max-w-fit px-5 py-1 rounded shadow-xl text-5xl font-bold transition-all`}
+          >
+            Rólam
+          </a>
         </Link>
         <Link href="/portfolio">
-          <a className="text-5xl font-bold transition-all uppercase hover:text-black">Munkáim</a>
+          <a
+            className={`${
+              router.pathname === "/portfolio" ? "text-black" : "text-main"
+            } bg-white max-w-fit px-5 py-1 rounded shadow-xl text-5xl font-bold transition-all`}
+          >
+            Munkáim
+          </a>
         </Link>
         <Link href="/order">
-          <a className="text-5xl font-bold transition-all uppercase hover:text-black">Megrendelés</a>
+          <a
+            className={`${
+              router.pathname === "/order" ? "text-black" : "text-main"
+            } bg-white max-w-fit px-5 py-1 rounded shadow-xl text-5xl font-bold transition-all`}
+          >
+            Rendelés
+          </a>
         </Link>
       </nav>
     </header>
