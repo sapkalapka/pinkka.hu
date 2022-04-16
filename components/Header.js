@@ -8,7 +8,7 @@ const Header = () => {
 
   return (
     <header className="bg-[url('/bg.jpg')] bg-contain">
-      <nav className="flex gap-4 px-4 py-2 justify-center items-center text-center font-accent-2">
+      <nav className="flex gap-4 px-4 py-2 bg-white bg-opacity-20 justify-center items-center text-center font-accent-2">
         <Link href="/">
           <a className="rounded shadow-xl bg-white px-4 text-7xl font-bold font-accent-1 transition-all">
             PinKKa
