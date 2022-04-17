@@ -4,7 +4,7 @@ const PortfolioPiece = ({ src, title, text, url }) => {
     <div className="group grid md:grid-cols-2 gap-6 md:gap-12">
       {/* portfolio text */}
       <div className="md:group-even:order-2 md:group-even:text-left grid gap-4 content-center text-center md:text-right">
-        <p className="font-accent-2 font-bold text-6xl">{title}</p>
+        <p className="font-accent-2 font-bold text-5xl">{title}</p>
         <p className="text-sm">{text}</p>
         <a
           href={url}

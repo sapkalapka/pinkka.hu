@@ -14,7 +14,7 @@ const Footer = () => {
       <p className="font-accent-2 text-center text-4xl py-2 font-bold border-dashed border-b-2 border-black my-1">
         Örömmel öltve!
       </p>
-      <div className="border-t-2 border-black">
+      <div className="border-t-2 border-black bg-blue-100">
         <div className="lg:w-4/6 mx-auto grid md:grid-cols-2 px-6 md:gap-32">
           <div className="grid md:justify-end">
             <p className="font-bold mt-6 mb-1">Információk</p>
@@ -70,8 +70,7 @@ const Footer = () => {
             </a>
           </div>
         </div>
-
-        <p className="text-center text-sm font-medium my-6">
+        <p className="text-center text-sm font-medium pt-6 pb-2">
           © 2022 - pinkka.hu - Minden jog fenntartva.
         </p>
       </div>

@@ -7,18 +7,16 @@ const Header = () => {
   const router = useRouter()
 
   return (
-    <header className="bg-[url('/bg.jpg')] bg-contain">
-      <nav className="flex gap-4 px-4 py-2 bg-white bg-opacity-20 justify-center items-center text-center font-accent-2">
+    <header className="shadow bg-blue-100">
+      <nav className="px-6 lg:w-9/12 lg:mx-auto flex items-center gap-12">
         <Link href="/">
-          <a className="rounded shadow-xl bg-white px-4 text-7xl font-bold font-accent-1 transition-all">
-            PinKKa
-          </a>
+          <a className="rounded text-7xl font-bold font-accent-1">PinKKa</a>
         </Link>
         <Link href="/">
           <a
             className={`${
               router.pathname === "/" ? "text-black" : "text-blue-900"
-            } ml-auto bg-white max-w-fit px-5 py-1 rounded shadow-xl text-5xl font-bold transition-all`}
+            } ml-auto text-2xl font-bold`}
           >
             Rólam
           </a>
@@ -27,7 +25,7 @@ const Header = () => {
           <a
             className={`${
               router.pathname === "/portfolio" ? "text-black" : "text-blue-900"
-            } bg-white max-w-fit px-5 py-1 rounded shadow-xl text-5xl font-bold transition-all`}
+            } text-2xl font-bold`}
           >
             Munkáim
           </a>
@@ -36,7 +34,7 @@ const Header = () => {
           <a
             className={`${
               router.pathname === "/order" ? "text-black" : "text-blue-900"
-            } bg-white max-w-fit px-5 py-1 rounded shadow-xl text-5xl font-bold transition-all`}
+            } text-2xl font-bold`}
           >
             Rendelés
           </a>
