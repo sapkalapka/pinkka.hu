@@ -6,9 +6,6 @@ module.exports = {
   ],
   theme: {
     extend: {
-      colors: {
-        main: "#33329A",
-      },
       fontFamily: {
         main: ["Montserrat", "sans-serif"],
         "accent-1": ["Grape Nuts", "cursive"],

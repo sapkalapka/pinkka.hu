@@ -17,7 +17,7 @@ const Header = () => {
         <Link href="/">
           <a
             className={`${
-              router.pathname === "/" ? "text-black" : "text-main"
+              router.pathname === "/" ? "text-black" : "text-blue-900"
             } ml-auto bg-white max-w-fit px-5 py-1 rounded shadow-xl text-5xl font-bold transition-all`}
           >
             Rólam
@@ -26,7 +26,7 @@ const Header = () => {
         <Link href="/portfolio">
           <a
             className={`${
-              router.pathname === "/portfolio" ? "text-black" : "text-main"
+              router.pathname === "/portfolio" ? "text-black" : "text-blue-900"
             } bg-white max-w-fit px-5 py-1 rounded shadow-xl text-5xl font-bold transition-all`}
           >
             Munkáim
@@ -35,7 +35,7 @@ const Header = () => {
         <Link href="/order">
           <a
             className={`${
-              router.pathname === "/order" ? "text-black" : "text-main"
+              router.pathname === "/order" ? "text-black" : "text-blue-900"
             } bg-white max-w-fit px-5 py-1 rounded shadow-xl text-5xl font-bold transition-all`}
           >
             Rendelés

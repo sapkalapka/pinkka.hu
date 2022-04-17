@@ -1,4 +1,5 @@
 import Image from "next/image"
+import PageTitle from "../components/PageTitle"
 import PortfolioPiece from "../components/PortfolioPiece"
 
 const portfolioData = [
@@ -39,6 +40,7 @@ const portfolioData = [
 const Portfolio = () => {
   return (
     <>
+      <PageTitle title="Munkáim" />
       <p className="text-justify">
         Lorem ipsum dolor sit amet consectetur adipisicing elit. Neque numquam
         mollitia eum laudantium impedit? Et distinctio, minima quo fuga

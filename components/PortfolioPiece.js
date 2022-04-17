@@ -8,7 +8,7 @@ const PortfolioPiece = ({ src, title, text, url }) => {
         <p className="text-sm">{text}</p>
         <a
           href={url}
-          className="mt-2 font-medium max-w-fit md:group-even:mr-auto md:group-odd:ml-auto text-main underline underline-offset-2 hover:decoration-2"
+          className="mt-2 font-medium max-w-fit md:group-even:mr-auto md:group-odd:ml-auto text-blue-900 underline underline-offset-2 hover:decoration-2"
         >
           Részletek
         </a>
