@@ -1,22 +1,35 @@
-import Image from "next/image"
+import Image from 'next/image';
+import Link from 'next/link';
+
 const PortfolioPiece = ({ src, title, text, url }) => {
   return (
-    <div className="group grid md:grid-cols-2 gap-6 md:gap-12">
+    <div className='group grid md:grid-cols-2 gap-6'>
       {/* portfolio text */}
-      <div className="md:group-even:order-2 md:group-even:text-left grid gap-4 content-center text-center md:text-right">
-        <p className="font-accent-2 font-bold text-5xl">{title}</p>
-        <p className="text-sm">{text}</p>
-        <a
-          href={url}
-          className="mt-2 font-medium max-w-fit md:group-even:mr-auto md:group-odd:ml-auto text-blue-900 underline underline-offset-2 hover:decoration-2"
-        >
-          Részletek
-        </a>
+      <div className='md:group-odd:order-2 md:group-even:text-right grid gap-4 content-center'>
+        <p className='font-display font-bold text-5xl'>{title}</p>
+        <p className='text-sm'>{text}</p>
+        <Link href='/'>
+          <a
+            href={url}
+            className='bg-sky-300 rounded shadow hover:-translate-y-0.5 hover:shadow-lg transition-all max-w-fit md:group-even:ml-auto px-8 py-2'
+          >
+            Részletek
+          </a>
+        </Link>
       </div>
       {/* portfolio img */}
-      <img src={src} className="w-full drop-shadow-lg rounded" />
+      <div className='relative'>
+        <Image
+          src={src}
+          width={4}
+          height={3}
+          layout={'responsive'}
+          alt='product'
+          className='rounded shadow'
+        />
+      </div>
     </div>
-  )
-}
+  );
+};
 
-export default PortfolioPiece
+export default PortfolioPiece;

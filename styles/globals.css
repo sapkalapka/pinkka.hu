@@ -3,7 +3,12 @@
 @tailwind utilities;
 
 @layer base {
+  html,
+  body,
   #__next {
-    @apply flex flex-col font-main;
+    @apply min-h-screen;
+  }
+  #__next {
+    @apply flex flex-col font-medium antialiased;
   }
 }

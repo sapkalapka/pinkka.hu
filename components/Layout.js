@@ -1,14 +1,14 @@
-import Header from "./Header"
-import Footer from "./Footer"
+import Header from './Header';
+import Footer from './Footer';
 
 const Layout = ({ children }) => {
   return (
     <>
       <Header />
-      <main className="px-6 grow my-12 lg:w-9/12 lg:mx-auto">{children}</main>
+      <main className='p-6 grow my-12 xl:w-9/12 xl:mx-auto'>{children}</main>
       <Footer />
     </>
-  )
-}
+  );
+};
 
-export default Layout
+export default Layout;
