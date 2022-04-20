@@ -41,9 +41,9 @@ const LineItem = ({ lineItem, setLineItems }) => {
       </div>
 
       <div className='flex grow justify-end gap-1'>
-        <AiFillPlusSquare onClick={() => handlePlus(lineItem)} size={25} className='text-sky-600 cursor-pointer' />
+        <AiFillPlusSquare onClick={() => handlePlus(lineItem)} size={25} className='text-sky-400 cursor-pointer' />
         <p className='text-xl'>{lineItem.qty}</p>
-        <AiFillMinusSquare onClick={() => handleMinus(lineItem)} size={25} className='text-sky-600 cursor-pointer' />
+        <AiFillMinusSquare onClick={() => handleMinus(lineItem)} size={25} className='text-sky-400 cursor-pointer' />
       </div>
       <p className='ml-auto'>{lineItem.price} Ft</p>
     </div>

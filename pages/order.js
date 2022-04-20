@@ -1,9 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import Image from 'next/image';
 import ButtonGroup from '../components/ButtonGroup';
-import ButtonGroupMultiselect from '../components/ButtonGroupMultiselect';
-
-import { BsAsterisk } from 'react-icons/bs';
 import InputPlusLabel from '../components/InputPlusLabel';
 import LineItem from '../components/LineItem';
 
@@ -11,21 +7,16 @@ const Order = ({ products }) => {
   const [firstName, setFirstName] = useState('');
   const [lastName, setLastName] = useState('');
   const [email, setEmail] = useState('');
-
-  const [selectedProducts, setSelectedProducts] = useState([]);
+  const [city, setCity] = useState('');
+  const [street, setStreet] = useState('');
   const [lineItems, setLineItems] = useState([]);
   const [orderTotal, setOrderTotal] = useState(0);
   const [selectedShipping, setSelectedShipping] = useState('');
   const [selectedPayment, setSelectedPayment] = useState('');
-  const [otherDescription, setOtherDescription] = useState('');
 
   useEffect(() => {
-    setLineItems(selectedProducts.map((item) => ({ ...products[item], qty: 1 })));
-  }, [products, selectedProducts]);
-
-  useEffect(() => {
-    console.log(lineItems);
-  }, [lineItems]);
+    if (selectedShipping) setOrderTotal((prev) => prev + selectedShipping);
+  }, [selectedShipping]);
 
   useEffect(() => {
     if (!lineItems) return;
@@ -36,18 +27,20 @@ const Order = ({ products }) => {
         })
         .reduce((total, { price, qty }) => {
           return total + price * qty;
-        }, 0)
+        }, selectedShipping.price)
     );
-  }, [lineItems]);
+  }, [lineItems, selectedShipping]);
 
   const shippingProviders = [
     {
       title: 'GLS - 1290Ft',
       handle: 'gls',
+      price: 1290,
     },
     {
       title: 'Személyes átvét - 0Ft',
       handle: 'szemelyes-atvet',
+      price: 0,
     },
   ];
   const paymentProviders = [
@@ -64,7 +57,7 @@ const Order = ({ products }) => {
   return (
     <div className='grid gap-6 md:grid-cols-2'>
       <div>
-        <h2 className='text-2xl font-bold underline underline-offset-2 decoration-2 decoration-sky-600'>
+        <h2 className='text-2xl font-bold underline underline-offset-2 decoration-2 decoration-sky-400'>
           Személyes adatok
         </h2>
         <InputPlusLabel
@@ -88,49 +81,33 @@ const Order = ({ products }) => {
           placeholder='beko.toni@morcigarazs.hu'
           setParentState={setEmail}
         />
-        <h2 className='text-2xl mt-8 font-bold underline underline-offset-2 decoration-2 decoration-sky-600'>
+        <h2 className='text-2xl mt-8 font-bold underline underline-offset-2 decoration-2 decoration-sky-400'>
           Rendelés adatok
         </h2>
-        <ButtonGroup title='Szállítási mód' setParentState={setSelectedShipping} options={shippingProviders} />
-        {selectedShipping === 'GLS - 1290Ft' && (
+        <ButtonGroup title='Fizetési mód' setParentState={setSelectedPayment} data={paymentProviders} />
+        <ButtonGroup title='Szállítási mód' setParentState={setSelectedShipping} data={shippingProviders} />
+        {selectedShipping.handle === 'gls' && (
           <>
-            <InputPlusLabel type='text' title='Város' isRequired={true} placeholder='Budapest' />
+            <InputPlusLabel
+              type='text'
+              title='Város'
+              isRequired={true}
+              placeholder='Budapest'
+              setParentState={setCity}
+            />
             <InputPlusLabel
               type='text'
               title='Utca,házszám'
               isRequired={true}
               placeholder='Balkán utca 16. 3. emelet 11. ajtó'
+              setParentState={setStreet}
             />
           </>
         )}
-        <ButtonGroup title='Fizetési mód' setParentState={setSelectedPayment} options={paymentProviders} />
-
-        <ButtonGroupMultiselect
-          title='Mit szeretnél rendelni?'
-          parentState={selectedProducts}
-          setParentState={setSelectedProducts}
-          options={products}
-        />
-        {/* {selectedProducts.includes('egyeb') && (
-		  <>
-			<p className='mt-4'>Írd meg mire gondolsz!</p>
-			<textarea
-			  rows={5}
-			  onChange={(e) => setOtherDescription(e.target.value)}
-			  className='w-full border resize-y outline-sky-600 rounded'
-			></textarea>
-			<p className='text-justify'>
-			  <BsAsterisk className='text-red-600 inline pb-2' />
-			  Kérlek vedd figyelembe a termékpalettát a döntésedkor. Nem
-			  garantált, hogy képes vagyok teljesíteni a kérésed, de biztosan
-			  felveszem veled a kapcsolatot.{' '}
-			</p>
-		  </>
-		)} */}
       </div>
-      {lineItems && (
+      {lineItems.length > 0 && (
         <div className='md:border-l md:px-6 '>
-          <h2 className='text-2xl font-bold underline underline-offset-2 decoration-2 decoration-sky-600'>
+          <h2 className='text-2xl font-bold underline underline-offset-2 decoration-2 decoration-sky-400'>
             Rendelés összefoglaló
           </h2>
           <div className='flex justify-between mt-4'>

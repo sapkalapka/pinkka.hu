@@ -1,10 +1,4 @@
-const InputPlusLabel = ({
-  type,
-  title,
-  isRequired,
-  placeholder,
-  setParentState,
-}) => {
+const InputPlusLabel = ({ type, title, isRequired, placeholder, setParentState }) => {
   return (
     <>
       <p className='mt-4'>{title}</p>
@@ -12,7 +6,7 @@ const InputPlusLabel = ({
         required={isRequired}
         placeholder={placeholder}
         type={type}
-        className='border w-full shadow-sm rounded outline-sky-600 px-1'
+        className='border w-full shadow-sm rounded outline-sky-400 px-1'
         onChange={(e) => setParentState(e.target.value)}
       />
     </>

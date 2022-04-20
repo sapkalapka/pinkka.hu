@@ -18,8 +18,7 @@ const Header = () => {
         <Link href='/'>
           <a
             className={`${
-              router.pathname === '/' &&
-              'underline underline-offset-2 decoration-sky-600 decoration-2'
+              router.pathname === '/' && 'underline underline-offset-2 decoration-sky-400 decoration-2'
             } text-2xl `}
           >
             Rólam
@@ -28,8 +27,7 @@ const Header = () => {
         <Link href='/products'>
           <a
             className={`${
-              router.pathname === '/products' &&
-              'underline underline-offset-2 decoration-sky-600 decoration-2'
+              router.pathname === '/products' && 'underline underline-offset-2 decoration-sky-400 decoration-2'
             }  text-2xl `}
           >
             Munkáim
@@ -38,8 +36,7 @@ const Header = () => {
         <Link href='/order'>
           <a
             className={`${
-              router.pathname === '/order' &&
-              'underline underline-offset-2 decoration-sky-600 decoration-2'
+              router.pathname === '/order' && 'underline underline-offset-2 decoration-sky-400 decoration-2'
             } text-2xl `}
           >
             Rendelés

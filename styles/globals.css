@@ -9,6 +9,9 @@
     @apply min-h-screen;
   }
   #__next {
-    @apply flex flex-col font-medium antialiased;
+    @apply flex flex-col;
+  }
+  * {
+    @apply font-medium antialiased;
   }
 }
