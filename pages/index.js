@@ -14,7 +14,7 @@ const About = () => {
       </div>
       <div className='md:w-7/12 xl:text-left'>
         <p className='font-display italic font-bold text-5xl mb-6 text-center md:text-left'>
-          Szia<span className='text-sky-300'>,</span> köszöntelek itt!
+          Szia<span className='text-sky-600'>,</span> köszöntelek itt!
         </p>
         <p className='text-justify'>
           Lorem ipsum dolor sit amet consectetur adipisicing elit. Minus impedit

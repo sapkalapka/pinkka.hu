@@ -5,7 +5,7 @@ const Layout = ({ children }) => {
   return (
     <>
       <Header />
-      <main className='p-6 grow my-12 xl:w-9/12 xl:mx-auto'>{children}</main>
+      <main className='p-6 grow my-6 xl:w-9/12 xl:mx-auto'>{children}</main>
       <Footer />
     </>
   );

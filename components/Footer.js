@@ -50,10 +50,10 @@ const Footer = () => {
               target='_blank'
               className='hover:underline hover:underline-offset-2 hover:decoration-1 transition-all'
               rel='noreferrer'
-              href='https://www.facebook.com/krisztina.jaszberenyinekarasz'
+              href='https://www.facebook.com/karasz.kriszta'
             >
               <BsFacebook size={20} className='inline-block mr-2' />
-              <span>krisztina.jaszberenyinekarasz</span>
+              <span>karasz.kriszta</span>
             </a>
             <a
               target='_blank'
