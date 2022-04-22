@@ -1,16 +1,16 @@
-const InputPlusLabel = ({ type, title, isRequired, placeholder, setParentState }) => {
-  return (
-    <>
-      <p className='mt-4'>{title}</p>
-      <input
-        required={isRequired}
-        placeholder={placeholder}
-        type={type}
-        className='border w-full shadow-sm rounded outline-sky-400 px-1'
-        onChange={(e) => setParentState(e.target.value)}
-      />
-    </>
-  );
+const InputPlusLabel = ({ type, title, isRequired, placeholder, onChange }) => {
+    return (
+        <div className="my-4">
+            <label>{title}</label>
+            <input
+                required={isRequired}
+                placeholder={placeholder}
+                type={type}
+                className="border w-full shadow-sm rounded outline-sky-400 px-1"
+                onChange={onChange}
+            />
+        </div>
+    );
 };
 
 export default InputPlusLabel;

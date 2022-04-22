@@ -1,5 +1,5 @@
 const Warranty = () => {
-  return <div>warranty page</div>
-}
+    return <div>warranty page</div>;
+};
 
-export default Warranty
+export default Warranty;

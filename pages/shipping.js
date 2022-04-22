@@ -1,5 +1,5 @@
 const Shipping = () => {
-  return <div>shipping</div>
-}
+    return <div>shipping</div>;
+};
 
-export default Shipping
+export default Shipping;
