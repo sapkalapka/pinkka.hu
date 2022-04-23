@@ -26,11 +26,11 @@ const ProductCard = ({ product, lineItems, setLineItems, setNotification }) => {
             </p>
 
             <img
-                src="https://www.cureuppharma.in/wp-content/uploads/2018/06/dummy.jpg"
-                alt=""
+                src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS4TtqCA6s8_rxgGpNtXQj80LnhOwixa1cMVNcrQgvbp9nTeJoc4YXVrbStUxEo4Lm98mg&usqp=CAU"
+                width="100%"
             />
             <div className="p-4">
-                <p className="text-xl">{product.name}</p>
+                <p className="text-xl">{product.title}</p>
                 <div className=" flex justify-between items-center">
                     <span className="font-bold">{product.price} Ft</span>
                     <HiOutlineShoppingBag
