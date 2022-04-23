@@ -12,10 +12,10 @@ const Footer = () => {
     return (
         <footer>
             <p className="font-display text-center text-2xl font-bold border-dashed border-b-2 border-black my-1">
-                Örömmel öltve!
+                Örömmel öltve
             </p>
-            <div className="border-t-2 border-black bg-sky-50">
-                <div className="lg:w-4/6 mx-auto grid md:grid-cols-2 p-2 md:gap-32 my-4">
+            <div className="border-t-2 border-black">
+                <div className="lg:w-4/6 mx-auto grid md:grid-cols-2 p-2 md:gap-32 my-1">
                     <div className="grid md:justify-end gap-1">
                         <p className="font-bold">Információk</p>
                         <Link href="/warranty">
@@ -81,9 +81,6 @@ const Footer = () => {
                         </a>
                     </div>
                 </div>
-                <p className="text-center text-sm  pb-2">
-                    © 2022 - pinkka.hu - Minden jog fenntartva.
-                </p>
             </div>
         </footer>
     );

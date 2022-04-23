@@ -6,7 +6,7 @@ const InputPlusLabel = ({ type, title, isRequired, placeholder, onChange }) => {
                 required={isRequired}
                 placeholder={placeholder}
                 type={type}
-                className="border w-full shadow-sm rounded outline-sky-400 px-1"
+                className="border w-full shadow-sm rounded outline-cyan-700 px-1"
                 onChange={onChange}
             />
         </div>

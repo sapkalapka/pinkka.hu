@@ -1,4 +1,5 @@
 import ProductDisplay from '../components/ProductDisplay';
+import ProductsByCategory from '../components/ProductsByCategory';
 
 const Products = ({ products, lineItems, setLineItems, setNotification }) => {
     return (
@@ -10,11 +11,12 @@ const Products = ({ products, lineItems, setLineItems, setNotification }) => {
                 dolorem, eius nisi, cumque fugiat debitis minus. Dolorem in
                 expedita quam mollitia nostrum voluptatem.
             </p>
-            <div className="grid gap-12">
-                {products.map((product, i) => (
-                    <ProductDisplay
-                        key={`ProductDisplay-${i}`}
-                        product={product}
+            <div className="grid gap-4">
+                {Object.entries(products).map(([key, value]) => (
+                    <ProductsByCategory
+                        key={key}
+                        title={key}
+                        products={value}
                         lineItems={lineItems}
                         setLineItems={setLineItems}
                         setNotification={setNotification}

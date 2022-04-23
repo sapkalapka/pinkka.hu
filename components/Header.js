@@ -9,7 +9,7 @@ const Header = () => {
         <header className="px-6 xl:w-10/12 xl:mx-auto grid gap-4 justify-evenly text-center sm:flex">
             <Link href="/">
                 <a className="rounded text-5xl font-bold font-display">
-                    pin<span className="text-sky-400">KK</span>a
+                    pin<span className="text-cyan-700">KK</span>a
                 </a>
             </Link>
             <div className="flex items-end gap-4 sm:gap-8 sm:ml-auto font-display">
@@ -17,7 +17,7 @@ const Header = () => {
                     <a
                         className={`${
                             router.pathname === '/' &&
-                            'underline underline-offset-2 decoration-sky-400 decoration-2'
+                            'underline underline-offset-2 decoration-cyan-700 decoration-2'
                         } text-2xl `}
                     >
                         Rólam
@@ -27,7 +27,7 @@ const Header = () => {
                     <a
                         className={`${
                             router.pathname === '/products' &&
-                            'underline underline-offset-2 decoration-sky-400 decoration-2'
+                            'underline underline-offset-2 decoration-cyan-700 decoration-2'
                         }  text-2xl `}
                     >
                         Munkáim
@@ -37,7 +37,7 @@ const Header = () => {
                     <a
                         className={`${
                             router.pathname === '/order' &&
-                            'underline underline-offset-2 decoration-sky-400 decoration-2'
+                            'underline underline-offset-2 decoration-cyan-700 decoration-2'
                         } text-2xl `}
                     >
                         Rendelés

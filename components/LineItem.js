@@ -1,12 +1,12 @@
 import Image from 'next/image';
 import { AiFillPlusSquare, AiFillMinusSquare } from 'react-icons/ai';
 
-const LineItem = ({ title, handle, price, quantity, src, setLineItems }) => {
+const LineItem = ({ id, title, price, quantity, src, setLineItems }) => {
     const handlePlus = () => {
         setLineItems((state) => {
             return state.map((item) => {
                 const { quantity, price, ...rest } = item;
-                if (item.handle === handle) {
+                if (item.id === id) {
                     return {
                         ...rest,
                         quantity: quantity + 1,
@@ -21,11 +21,11 @@ const LineItem = ({ title, handle, price, quantity, src, setLineItems }) => {
     const handleMinus = () => {
         setLineItems((state) => {
             if (quantity - 1 === 0) {
-                return state.filter((item) => item.handle !== handle);
+                return state.filter((item) => item.id !== id);
             } else
                 return state.map((item) => {
                     const { quantity, price, ...rest } = item;
-                    if (item.handle === handle) {
+                    if (item.id === id) {
                         return {
                             ...rest,
                             quantity: quantity - 1,

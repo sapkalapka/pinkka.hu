@@ -25,9 +25,9 @@ const OrderSummary = ({ lineItems, setLineItems, shipping }) => {
                     <ul className="grid gap-2">
                         {lineItems.map((lineItem) => (
                             <LineItem
-                                key={lineItem.handle}
+                                key={lineItem.id}
+                                id={lineItem.id}
                                 title={lineItem.title}
-                                handle={lineItem.handle}
                                 quantity={lineItem.quantity}
                                 price={lineItem.price}
                                 src={lineItem.src}

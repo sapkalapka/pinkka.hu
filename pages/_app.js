@@ -2,41 +2,13 @@ import '../styles/globals.css';
 import Layout from '../components/Layout';
 import { useState, useEffect } from 'react';
 import Notification from '../components/Notification';
+import ProductJSON from '../public/pinkkaproducts.json';
 
-const products = [
-    {
-        src: '/img1.jpg',
-        description:
-            'Lorem ipsum dolor sit amet consectetur adipisicing elit. Deleniti asperiores earum molestiae, ducimus quia perspiciatis doloremque exercitationem.',
-        title: 'Hátizsák',
-        handle: 'hatizsak',
-        price: 9990,
-    },
-    {
-        src: '/img2.jpg',
-        description:
-            'Lorem ipsum dolor sit amet consectetur adipisicing elit. Deleniti asperiores earum molestiae, ducimus quia perspiciatis doloremque exercitationem.',
-        title: 'Neszesszer',
-        handle: 'neszesszer',
-        price: 4990,
-    },
-    {
-        src: '/img3.jpg',
-        description:
-            'Lorem ipsum dolor sit amet consectetur adipisicing elit. Deleniti asperiores earum molestiae, ducimus quia perspiciatis doloremque exercitationem.',
-        title: 'Könyvtok',
-        handle: 'konyvtok',
-        price: 4990,
-    },
-    {
-        src: '/img5.jpg',
-        description:
-            'Lorem ipsum dolor sit amet consectetur adipisicing elit. Deleniti asperiores earum molestiae, ducimus quia perspiciatis doloremque exercitationem.',
-        title: 'Laptop táska',
-        handle: 'laptoptaska',
-        price: 12990,
-    },
-];
+// const fetchProducts = async () => {
+//     const data = JSON.parse(await fs.readFile('/pinkkaproducts.json', 'utf8'));
+//     return data;
+// };
+
 const shippingMethods = [
     {
         title: 'GLS Házhozszállítás',
@@ -63,7 +35,6 @@ const paymentMethods = [
 function MyApp({ Component, pageProps }) {
     const [lineItems, setLineItems] = useState([]);
     const [notification, setNotification] = useState(null);
-
     return (
         <Layout>
             <Notification
@@ -72,7 +43,7 @@ function MyApp({ Component, pageProps }) {
             />
             <Component
                 {...pageProps}
-                products={products}
+                products={ProductJSON}
                 shippingMethods={shippingMethods}
                 paymentMethods={paymentMethods}
                 lineItems={lineItems}

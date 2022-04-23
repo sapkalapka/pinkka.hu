@@ -3,15 +3,15 @@
 @tailwind utilities;
 
 @layer base {
-  html,
-  body,
-  #__next {
-    @apply min-h-screen;
-  }
-  #__next {
-    @apply flex flex-col;
-  }
-  * {
-    @apply font-medium antialiased;
-  }
+    html,
+    body,
+    #__next {
+        @apply min-h-screen;
+    }
+    #__next {
+        @apply flex flex-col;
+    }
+    * {
+        @apply font-medium antialiased;
+    }
 }
