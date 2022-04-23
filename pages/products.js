@@ -1,6 +1,6 @@
 import ProductDisplay from '../components/ProductDisplay';
 
-const Products = ({ products, lineItems, setLineItems }) => {
+const Products = ({ products, lineItems, setLineItems, setNotification }) => {
     return (
         <>
             <p className="text-justify mb-6">
@@ -17,6 +17,7 @@ const Products = ({ products, lineItems, setLineItems }) => {
                         product={product}
                         lineItems={lineItems}
                         setLineItems={setLineItems}
+                        setNotification={setNotification}
                     />
                 ))}
             </div>

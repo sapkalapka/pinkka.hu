@@ -39,10 +39,14 @@ const LineItem = ({ title, handle, price, quantity, src, setLineItems }) => {
     };
 
     return (
-        <div className="grid grid-cols-4 p-2 items-center gap-2 border-b">
-            <img src={src} alt="product" className="w-full rounded shadow" />
+        <div className="flex p-2 items-center gap-2 border-b">
+            <img
+                src={src}
+                alt="product"
+                className="hidden sm:block sm:w-1/12 md:w-2/12 rounded shadow object-cover"
+            />
             <p>{title}</p>
-            <div className="flex gap-1 justify-end items-center">
+            <div className="flex gap-1 ml-auto justify-end items-center">
                 <p>{quantity} db</p>
                 <AiFillMinusSquare
                     onClick={handleMinus}

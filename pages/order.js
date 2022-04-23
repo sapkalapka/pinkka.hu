@@ -4,14 +4,37 @@ import InputPlusLabel from '../components/InputPlusLabel';
 import OrderRowTitle from '../components/OrderRowTitle';
 import OrderSummary from '../components/OrderSummary';
 
-const Order = ({ products, shipping, payment, lineItems, setLineItems }) => {
+const Order = ({
+    products,
+    shippingMethods,
+    paymentMethods,
+    lineItems,
+    setLineItems,
+}) => {
     const [firstName, setFirstName] = useState('');
     const [lastName, setLastName] = useState('');
     const [email, setEmail] = useState('');
+    const [phone, setPhone] = useState('');
     const [city, setCity] = useState('');
     const [street, setStreet] = useState('');
-    const [selectedShipping, setSelectedShipping] = useState('');
-    const [selectedPayment, setSelectedPayment] = useState('');
+    const [shipping, setShipping] = useState({ price: 0 });
+    const [payment, setPayment] = useState('');
+
+    const handleShippingChange = (e) => {
+        setShipping(
+            ...shippingMethods.filter(
+                (method) => method.handle === e.target.value
+            )
+        );
+    };
+
+    const handlePaymentChange = (e) => {
+        setPayment(
+            ...paymentMethods.filter(
+                (method) => method.handle === e.target.value
+            )
+        );
+    };
 
     return (
         <div className="grid gap-6 md:grid-cols-2">
@@ -42,18 +65,25 @@ const Order = ({ products, shipping, payment, lineItems, setLineItems }) => {
                 <OrderRowTitle title={'Rendelés adatok'} />
                 <ButtonGroup
                     title="Fizetési mód"
-                    onClick={(e) => setSelectedPayment(e.target.value)}
-                    active={selectedPayment}
-                    data={payment}
+                    onClick={handlePaymentChange}
+                    active={payment.handle}
+                    data={paymentMethods}
                 />
                 <ButtonGroup
                     title="Szállítási mód"
-                    onClick={(e) => setSelectedShipping(e.target.value)}
-                    active={selectedShipping}
-                    data={shipping}
+                    onClick={handleShippingChange}
+                    active={shipping.handle}
+                    data={shippingMethods}
                 />
-                {selectedShipping === 'gls' && (
+                {shipping.handle === 'gls' && (
                     <>
+                        <InputPlusLabel
+                            type="text"
+                            title="Telefonszám"
+                            isRequired={true}
+                            placeholder="+36704445566"
+                            onChange={setStreet}
+                        />
                         <InputPlusLabel
                             type="text"
                             title="Város"
@@ -66,14 +96,14 @@ const Order = ({ products, shipping, payment, lineItems, setLineItems }) => {
                             title="Utca,házszám"
                             isRequired={true}
                             placeholder="Balkán utca 16. 3. emelet 11. ajtó"
-                            onChange={setStreet}
+                            onChange={setPhone}
                         />
                     </>
                 )}
             </div>
             <OrderSummary
                 products={products}
-                selectedShipping={selectedShipping}
+                shipping={shipping}
                 lineItems={lineItems}
                 setLineItems={setLineItems}
             />

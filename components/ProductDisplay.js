@@ -1,13 +1,21 @@
 import Image from 'next/image';
 import Button from './Button';
 
-const ProductDisplay = ({ product, lineItems, setLineItems }) => {
+const ProductDisplay = ({
+    product,
+    lineItems,
+    setLineItems,
+    setNotification,
+}) => {
     const handleClick = () => {
         setLineItems((state) => {
             const lineItem = { ...product, quantity: 1 };
             if (lineItems.some((item) => item.handle === lineItem.handle)) {
+                setNotification('A termék már szerepel a kosaradban!');
+
                 return state;
             } else {
+                setNotification('Sikeresen kosárhoz adtad a terméket.');
                 return [...state, lineItem];
             }
         });

@@ -1,9 +1,9 @@
 import React, { useState } from 'react';
 
-const ButtonGroup = ({ title, active, data, onClick }) => {
+const ButtonGroup = ({ title, active, data, isRequired, onClick }) => {
     return (
-        <>
-            <p className="mt-4">{title}</p>
+        <div className="my-2">
+            <p>{title}</p>
             <div className="flex gap-2 justify-evenly">
                 {data.map((item) => (
                     <button
@@ -19,7 +19,7 @@ const ButtonGroup = ({ title, active, data, onClick }) => {
                     </button>
                 ))}
             </div>
-        </>
+        </div>
     );
 };
 

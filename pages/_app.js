@@ -1,6 +1,7 @@
 import '../styles/globals.css';
 import Layout from '../components/Layout';
 import { useState, useEffect } from 'react';
+import Notification from '../components/Notification';
 
 const products = [
     {
@@ -36,7 +37,7 @@ const products = [
         price: 12990,
     },
 ];
-const shipping = [
+const shippingMethods = [
     {
         title: 'GLS Házhozszállítás',
         handle: 'gls',
@@ -48,7 +49,7 @@ const shipping = [
         price: 0,
     },
 ];
-const payment = [
+const paymentMethods = [
     {
         title: 'Átutalás',
         handle: 'atutalas',
@@ -59,26 +60,24 @@ const payment = [
     },
 ];
 
-const dataProps = {
-    products,
-    shipping,
-    payment,
-};
-
 function MyApp({ Component, pageProps }) {
     const [lineItems, setLineItems] = useState([]);
-
-    useEffect(() => {
-        console.log(lineItems);
-    }, [lineItems]);
+    const [notification, setNotification] = useState(null);
 
     return (
         <Layout>
+            <Notification
+                notification={notification}
+                setNotification={setNotification}
+            />
             <Component
                 {...pageProps}
-                {...dataProps}
+                products={products}
+                shippingMethods={shippingMethods}
+                paymentMethods={paymentMethods}
                 lineItems={lineItems}
                 setLineItems={setLineItems}
+                setNotification={setNotification}
             />
         </Layout>
     );
