@@ -10,78 +10,75 @@ const Footer = () => {
     };
 
     return (
-        <footer>
-            <p className="font-display text-center text-2xl font-bold border-dashed border-b-2 border-black my-1">
-                Örömmel öltve
-            </p>
-            <div className="border-t-2 border-black">
-                <div className="lg:w-4/6 mx-auto grid md:grid-cols-2 p-2 md:gap-32 my-1">
-                    <div className="grid md:justify-end gap-1">
-                        <p className="font-bold">Információk</p>
-                        <Link href="/warranty">
-                            <a className="hover:underline hover:underline-offset-2 hover:decoration-1 transition-all">
-                                <BsShieldFillCheck
-                                    size={20}
-                                    className="inline-block mr-2"
-                                />
-                                <span>Termékgarancia</span>
-                            </a>
-                        </Link>
-                        <Link href="/shipping">
-                            <a className="hover:underline hover:underline-offset-2 hover:decoration-1 transition-all">
-                                <FaTruck
-                                    size={20}
-                                    className="inline-block mr-2"
-                                />
-                                <span>Szállítási információk</span>
-                            </a>
-                        </Link>
-                        <Link href="/payment">
-                            <a className="hover:underline hover:underline-offset-2 hover:decoration-1 transition-all">
-                                <MdPayments
-                                    size={20}
-                                    className="inline-block mr-2"
-                                />
-                                <span>Fizetési információk</span>
-                            </a>
-                        </Link>
-                    </div>
-                    <div className="grid gap-1">
-                        <p className="font-bold">Kapcsolat</p>
-                        <div
-                            className="cursor-pointer hover:underline hover:underline-offset-2 hover:decoration-1 transition-all"
-                            onClick={(e) => handleCopy(e)}
-                        >
-                            <MdEmail size={20} className="inline-block mr-2" />
-                            <span>krisztina_karasz@yahoo.com</span>
-                        </div>
-                        <a
-                            target="_blank"
-                            className="hover:underline hover:underline-offset-2 hover:decoration-1 transition-all"
-                            rel="noreferrer"
-                            href="https://www.facebook.com/karasz.kriszta"
-                        >
-                            <BsFacebook
-                                size={20}
-                                className="inline-block mr-2"
-                            />
-                            <span>karasz.kriszta</span>
+        <footer className="flex gap-16 bg-cyan-700 text-white p-16 relative max-h-72">
+            <ul className="grid gap-2">
+                <li>
+                    <h2 className="mb-4 font-medium">Információk</h2>
+                </li>
+                <li>
+                    <BsShieldFillCheck
+                        size={20}
+                        className="inline-block mr-2"
+                    />
+                    <Link href="/warranty">
+                        <a className="hover:underline hover:underline-offset-2 hover:decoration-1 transition-all">
+                            Termékgarancia
                         </a>
-                        <a
-                            target="_blank"
-                            className="hover:underline hover:underline-offset-2 hover:decoration-1 transition-all"
-                            rel="noreferrer"
-                            href="https://www.instagram.com/krisztina.karasz"
-                        >
-                            <AiFillInstagram
-                                size={20}
-                                className="inline-block mr-2"
-                            />
-                            <span>krisztina.karasz</span>
+                    </Link>
+                </li>
+                <li>
+                    <FaTruck size={20} className="inline-block mr-2" />
+                    <Link href="/shipping">
+                        <a className="hover:underline hover:underline-offset-2 hover:decoration-1 transition-all">
+                            Szállítási információk
                         </a>
-                    </div>
-                </div>
-            </div>
+                    </Link>
+                </li>
+                <li>
+                    <MdPayments size={20} className="inline-block mr-2" />
+                    <Link href="/payment">
+                        <a className="hover:underline hover:underline-offset-2 hover:decoration-1 transition-all">
+                            Fizetési információk
+                        </a>
+                    </Link>
+                </li>
+            </ul>
+            <ul className="grid gap-2">
+                <li>
+                    <h2 className="font-medium mb-4">Kapcsolat</h2>
+                </li>
+                <li>
+                    <MdEmail size={20} className="inline-block mr-2" />
+                    <span
+                        className="cursor-pointer hover:underline hover:underline-offset-2 hover:decoration-1 transition-all"
+                        onClick={(e) => handleCopy(e)}
+                    >
+                        krisztina_karasz@yahoo.com
+                    </span>
+                </li>
+                <li>
+                    <BsFacebook size={20} className="inline-block mr-2" />
+                    <a
+                        target="_blank"
+                        className="hover:underline hover:underline-offset-2 hover:decoration-1 transition-all"
+                        rel="noreferrer"
+                        href="https://www.facebook.com/karasz.kriszta"
+                    >
+                        karasz.kriszta
+                    </a>
+                </li>
+                <li>
+                    <AiFillInstagram size={20} className="inline-block mr-2" />
+                    <a
+                        target="_blank"
+                        className="hover:underline hover:underline-offset-2 hover:decoration-1 transition-all"
+                        rel="noreferrer"
+                        href="https://www.instagram.com/krisztina.karasz"
+                    >
+                        krisztina.karasz
+                    </a>
+                </li>
+            </ul>
         </footer>
     );
 };

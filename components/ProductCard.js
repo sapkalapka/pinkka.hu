@@ -24,7 +24,6 @@ const ProductCard = ({ product, lineItems, setLineItems, setNotification }) => {
             <p className="absolute top-0 right-0 py-1 px-3 cursor-pointer text-white text-sm bg-cyan-700 rounded-bl-lg tracking-wide">
                 Részletek
             </p>
-
             <img
                 src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS4TtqCA6s8_rxgGpNtXQj80LnhOwixa1cMVNcrQgvbp9nTeJoc4YXVrbStUxEo4Lm98mg&usqp=CAU"
                 width="100%"

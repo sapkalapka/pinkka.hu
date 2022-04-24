@@ -12,6 +12,6 @@
         @apply flex flex-col;
     }
     * {
-        @apply font-medium antialiased;
+        @apply antialiased;
     }
 }
