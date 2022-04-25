@@ -12,7 +12,7 @@ const ButtonGroup = ({ title, active, data, isRequired, onClick }) => {
                         onClick={onClick}
                         className={`${
                             active === item.handle &&
-                            `bg-cyan-700 text-white -translate-y-0.5`
+                            `bg-cyan-600 text-white -translate-y-0.5`
                         } shadow-sm border px-2 py-1 rounded grow transition-all`}
                     >
                         {item.title}

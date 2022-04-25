@@ -50,12 +50,12 @@ const LineItem = ({ id, title, price, quantity, src, setLineItems }) => {
                 <p>{quantity} db</p>
                 <AiFillMinusSquare
                     onClick={handleMinus}
-                    className="text-cyan-700 cursor-pointer"
+                    className="text-cyan-600 cursor-pointer"
                     size={20}
                 />
                 <AiFillPlusSquare
                     onClick={handlePlus}
-                    className="text-cyan-700 cursor-pointer"
+                    className="text-cyan-600 cursor-pointer"
                     size={20}
                 />
             </div>

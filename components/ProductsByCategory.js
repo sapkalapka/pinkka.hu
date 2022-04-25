@@ -9,8 +9,10 @@ const ProductDisplayByCategory = ({
 }) => {
     return (
         <div className="mb-12">
-            <h1 className="text-3xl font-bold font-display">{title}</h1>
-            <div className="grid grid-cols-3 gap-12 my-4">
+            <h1 className="text-3xl tracking-wide font-display font-medium">
+                {title}
+            </h1>
+            <div className="grid grid-cols-4 gap-4 my-4">
                 {products.map((product) => (
                     <ProductCard
                         key={product.id}

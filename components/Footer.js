@@ -1,3 +1,4 @@
+import Image from 'next/image';
 import { BsShieldFillCheck, BsFacebook } from 'react-icons/bs';
 import { MdPayments, MdLocationPin, MdEmail, MdBackpack } from 'react-icons/md';
 import { AiFillInstagram } from 'react-icons/ai';
@@ -10,7 +11,7 @@ const Footer = () => {
     };
 
     return (
-        <footer className="flex gap-16 bg-cyan-700 text-white p-16 relative max-h-72">
+        <footer className="flex gap-16 bg-cyan-600 text-white p-16 relative max-h-72 border-t">
             <ul className="grid gap-2">
                 <li>
                     <h2 className="mb-4 font-medium">Információk</h2>
@@ -79,6 +80,15 @@ const Footer = () => {
                     </a>
                 </li>
             </ul>
+            <div className="w-60 ml-auto relative">
+                <Image
+                    src="/logo_white.png"
+                    width={16}
+                    height={9}
+                    layout="responsive"
+                    alt="logo"
+                />
+            </div>
         </footer>
     );
 };

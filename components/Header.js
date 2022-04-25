@@ -1,4 +1,5 @@
 import Link from 'next/link';
+import Image from 'next/image';
 import { useRouter } from 'next/router';
 import React, { useState } from 'react';
 
@@ -6,19 +7,16 @@ const Header = () => {
     const router = useRouter();
 
     return (
-        <header className="grid gap-4 justify-evenly items-start text-center">
+        <header className="grid grid-cols-2 xl:w-9/12 xl:mx-auto p-6 justify-between items-center border-b">
             <Link href="/">
-                <a className="rounded text-5xl font-bold font-display">
-                    pin<span className="text-cyan-700">KK</span>a
-                </a>
+                <a className="text-cyan-600 text-6xl font-display">pinkka</a>
             </Link>
-            <div className="flex items-end gap-4 font-display">
+            <div className="flex justify-end gap-4">
                 <Link href="/">
                     <a
                         className={`${
-                            router.pathname === '/' &&
-                            'underline underline-offset-2 decoration-cyan-700 decoration-2'
-                        } text-2xl `}
+                            router.pathname === '/' && 'font-bold'
+                        } text-xl `}
                     >
                         Rólam
                     </a>
@@ -26,9 +24,8 @@ const Header = () => {
                 <Link href="/products">
                     <a
                         className={`${
-                            router.pathname === '/products' &&
-                            'underline underline-offset-2 decoration-cyan-700 decoration-2'
-                        }  text-2xl `}
+                            router.pathname === '/products' && 'font-bold'
+                        }  text-xl `}
                     >
                         Munkáim
                     </a>
@@ -36,9 +33,8 @@ const Header = () => {
                 <Link href="/order">
                     <a
                         className={`${
-                            router.pathname === '/order' &&
-                            'underline underline-offset-2 decoration-cyan-700 decoration-2'
-                        } text-2xl `}
+                            router.pathname === '/order' && 'font-bold'
+                        } text-xl `}
                     >
                         Rendelés
                     </a>

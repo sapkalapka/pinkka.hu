@@ -15,7 +15,7 @@ const Notification = ({ notification, setNotification }) => {
                 notification === null
                     ? 'opacity-0 scale-y-0'
                     : 'opacity-100 scale-y-100'
-            } fixed max-w-fit mx-auto transition-all top-12 inset-x-0 z-20 py-2 px-4 rounded shadow-lg text-white bg-cyan-700`}
+            } fixed max-w-fit mx-auto transition-all top-12 inset-x-0 z-20 py-2 px-4 rounded shadow-lg text-white bg-cyan-600`}
         >
             {notification}
         </div>

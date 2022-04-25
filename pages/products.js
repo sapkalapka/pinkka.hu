@@ -1,4 +1,3 @@
-import ProductDisplay from '../components/ProductDisplay';
 import ProductsByCategory from '../components/ProductsByCategory';
 
 const Products = ({ products, lineItems, setLineItems, setNotification }) => {
